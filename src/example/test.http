@@ -1,0 +1,44 @@
+### 获取所有用户
+GET http://localhost:3000/users
+
+### 获取单个用户
+GET http://localhost:3000/users/1
+
+### 搜索用户
+GET http://localhost:3000/users/search?name=张
+
+### 创建用户
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "赵六",
+  "email": "zhaoliu@example.com"
+}
+
+### 更新用户
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "张三(已更新)"
+}
+
+### 删除用户
+DELETE http://localhost:3000/users/3
+
+### 带API密钥的请求示例
+
+### 获取所有用户（带API密钥）
+GET http://localhost:3000/users
+X-API-Key: mini-nestjs-secret-key
+
+### 创建用户（带API密钥）
+POST http://localhost:3000/users
+Content-Type: application/json
+X-API-Key: mini-nestjs-secret-key
+
+{
+  "name": "钱七",
+  "email": "qianqi@example.com"
+}
